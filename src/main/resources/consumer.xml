@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--  消费方应用名, 不与提供方一致  -->
+    <dubbo:application name="consumer-of-hello-world" />
+
+    <!--  使用 multicast 广播注册中心发现暴露的服务地址 -->
+    <!--  单机环境需要配置禁止单播 (unicast为false), 否则消费之会启动报错, 提示找不到服务   -->
+    <dubbo:registry address="multicast://224.1.2.3:8888?unicast=false" />
+
+    <!--  生成远程服务代理, 和本地bean一样使用demoService  -->
+    <dubbo:reference id="demoService" interface="com.wsy.demo.DemoService" check="false" />
+</beans>
