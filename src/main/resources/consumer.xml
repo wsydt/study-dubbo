@@ -9,8 +9,8 @@
 
     <!--  使用 multicast 广播注册中心发现暴露的服务地址 -->
     <!--  单机环境需要配置禁止单播 (unicast为false), 否则消费之会启动报错, 提示找不到服务   -->
-    <dubbo:registry address="multicast://224.1.2.3:8888?unicast=false" />
+    <dubbo:registry address="multicast://224.1.2.3:8888" />
 
     <!--  生成远程服务代理, 和本地bean一样使用demoService  -->
-    <dubbo:reference id="demoService" interface="com.wsy.demo.DemoService" check="false" />
+    <dubbo:reference id="demoService" interface="com.wsy.demo.DemoService" />
 </beans>

@@ -1,4 +1,4 @@
-package com.wsy.demo.provider;
+package com.wsy.demo.provider.xml;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

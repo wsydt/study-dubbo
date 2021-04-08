@@ -1,4 +1,4 @@
-package com.wsy.demo.provider;
+package com.wsy.demo.provider.xml;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,7 +12,6 @@ public class Provider {
 
     public static void main(String[] args) throws IOException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("provider.xml");
-        context.start();
         System.in.read();
     }
 

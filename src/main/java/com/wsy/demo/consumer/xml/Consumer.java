@@ -1,4 +1,4 @@
-package com.wsy.demo.consumer;
+package com.wsy.demo.consumer.xml;
 
 import com.wsy.demo.DemoService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -11,9 +11,8 @@ public class Consumer {
 
     public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("consumer.xml");
-        context.start();
         DemoService demo = (DemoService) context.getBean("demoService");
-        Thread.sleep(120000);
+//        Thread.sleep(120000);
         String result = demo.sayHello("tdy");
         System.out.println(result);
 

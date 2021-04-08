@@ -9,7 +9,7 @@
 
     <!--  使用 multicast 广播注册中心暴露服务地址 -->
     <!--  单机环境需要配置禁止单播 (unicast为false), 否则消费之会启动报错, 提示找不到服务   -->
-    <dubbo:registry address="multicast://224.1.2.3:8888?unicast=false" />
+    <dubbo:registry address="multicast://224.1.2.3:8888" />
 
     <!--  使用 dubbo 协议在20880端口暴露服务  -->
     <dubbo:protocol name="dubbo" port="20880" />

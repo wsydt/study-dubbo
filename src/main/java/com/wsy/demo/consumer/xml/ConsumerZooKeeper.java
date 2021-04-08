@@ -1,4 +1,4 @@
-package com.wsy.demo.consumer;
+package com.wsy.demo.consumer.xml;
 
 import com.wsy.demo.DemoService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
