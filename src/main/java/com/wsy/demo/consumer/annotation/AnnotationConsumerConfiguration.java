@@ -9,14 +9,14 @@ import org.springframework.context.annotation.PropertySource;
 /**
  * @author wangshuangyong 2021.4.8
  */
-@Configuration
+//@Configuration
 @EnableDubbo(scanBasePackages = "com.wsy.demo.consumer")
-@PropertySource("classpath:dubbo/dubbo-consumer.properties")
+@PropertySource("classpath:/dubbo/dubbo-consumer.properties")
 @ComponentScan(basePackages = "com.wsy.demo.consumer")
 public class AnnotationConsumerConfiguration {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AnnotationConfigApplicationContext.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AnnotationConsumerConfiguration.class);
         AnnotationDemoAction action = context.getBean(AnnotationDemoAction.class);
         String result = action.sayHello("xyy");
         System.out.println(result);
