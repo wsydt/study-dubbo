@@ -1,3 +1,4 @@
+#####provider
 spring:
   application:
     name: dubbo-demo-provider
@@ -7,9 +8,30 @@ dubbo:
     name: dubbo-demo-provider
   registry:
     address: zookeeper://localhost:2181
+    group: dubbo-demo
   protocol:
     name: dubbo
     port: 30020
+  scan:
+    base-packages: com.wsy.demo.springboot.provider
 
 server:
   port: 9000
+
+##### consumer
+#spring:
+#  application:
+#    name: dubbo-demo-consumer
+#
+#server:
+#  port: 10000
+#
+#dubbo:
+#  application:
+#    name: dubbo-demo-consumer
+#  registry:
+#    address: zookeeper://localhost:2181
+#  consumer:
+#    timeout: 3000
+#  scan:
+#    base-packages: com.wsy.demo.springboot.consumer

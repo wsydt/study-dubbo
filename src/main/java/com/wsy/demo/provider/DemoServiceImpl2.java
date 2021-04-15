@@ -8,10 +8,10 @@ import org.apache.dubbo.config.annotation.DubboService;
  */
 
 @DubboService
-public class DemoServiceImpl implements DemoService {
+public class DemoServiceImpl2 implements DemoService {
     @Override
     public String sayHello(String name) {
         System.out.println("get name : " + name);
-        return "Hello " + name + "!!!, version : 1.0";
+        return "Hello " + name + "!!!, version : 2.0";
     }
 }

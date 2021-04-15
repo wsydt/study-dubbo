@@ -6,12 +6,14 @@
 
     <dubbo:application name="service-provider" />
 
-    <dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:registry id="dubbo-demo" address="zookeeper://localhost:2281?backup=localhost:2282,localhost:2283" group="dubbo-demo" />
+
+<!--    <dubbo:registry id="dubbo-demo" protocol="zookeeper" address="localhost:2281,localhost:2282,localhost:2283" group="dubbo-demo" />-->
 
     <dubbo:protocol name="dubbo" port="10032" />
 
-    <dubbo:service interface="com.wsy.demo.DemoService" ref="demoService" />
+    <dubbo:service interface="com.wsy.demo.DemoService" ref="demoService" group="dubbo-demo" />
 
-    <bean id="demoService" class="com.wsy.demo.provider.DemoServiceImpl"/>
+    <bean id="demoService" class="com.wsy.demo.provider.DemoServiceImpl" />
 
 </beans>

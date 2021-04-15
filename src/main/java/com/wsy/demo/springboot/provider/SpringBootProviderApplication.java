@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-@EnableDubbo(scanBasePackages = "com.wsy.demo.springboot.provider")
+//@EnableDubbo(scanBasePackages = "com.wsy.demo.springboot.provider")
 public class SpringBootProviderApplication {
 
     public static void main(String[] args) {

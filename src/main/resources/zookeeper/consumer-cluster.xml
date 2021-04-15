@@ -4,14 +4,12 @@
        xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="service-provider" />
+    <dubbo:application name="service-consumer" />
 
-    <dubbo:registry address="zookeeper://localhost:2181" />
+<!--    <dubbo:registry id="dubbo-demo" address="zookeeper://localhost:2281?backup=localhost:2282,localhost:2283" group="dubbo-demo" />-->
 
-    <dubbo:protocol name="dubbo" port="10032" />
+    <dubbo:registry id="dubbo-demo" protocol="zookeeper" address="localhost:2281,localhost:2282,localhost:2283" group="dubbo-demo" />
 
-    <dubbo:service interface="com.wsy.demo.DemoService" ref="demoService" />
-
-    <bean id="demoService" class="com.wsy.demo.provider.DemoServiceImpl"/>
+    <dubbo:reference interface="com.wsy.demo.DemoService" id="demoService" group="dubbo-demo" />
 
 </beans>

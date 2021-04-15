@@ -6,8 +6,8 @@
 
     <dubbo:application name="service-consumer" />
 
-    <dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:registry address="zookeeper://localhost:2181" group="dubbo-demo" />
 
-    <dubbo:reference interface="com.wsy.demo.DemoService" id="demoService" />
+    <dubbo:reference interface="com.wsy.demo.DemoService" id="demoService" group="dubbo-demo" />
 
 </beans>

@@ -11,7 +11,10 @@ import java.io.IOException;
 public class ProviderZooKeeper {
 
     public static void main(String[] args) throws IOException {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/provider.xml");
+        //zookeeper 单机
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/provider.xml");
+        //zookeeper 集群
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/provider-cluster.xml");
         System.in.read();
     }
 
