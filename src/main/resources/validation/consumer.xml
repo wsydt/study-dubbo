@@ -4,12 +4,10 @@
        xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="service-consumer" />
+    <dubbo:application name="validation-consumer" />
 
     <dubbo:registry address="zookeeper://localhost:2181" />
 
-    <dubbo:reference interface="com.wsy.demo.DemoService" id="demoService" version="*" group="*" merger="true" />
-
-    <dubbo:reference interface="com.wsy.demo.DemoService" id="demoService1" group="*" version="1.2.1" />
+    <dubbo:reference id="validation" interface="com.wsy.validation.api.ValidationService" validation="true" />
 
 </beans>

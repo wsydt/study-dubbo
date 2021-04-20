@@ -12,9 +12,9 @@ public class ProviderZooKeeper {
 
     public static void main(String[] args) throws IOException {
         //zookeeper 单机
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/provider.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/provider.xml");
         //zookeeper 集群
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/provider-cluster.xml");
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/provider-cluster.xml");
         System.in.read();
     }
 
