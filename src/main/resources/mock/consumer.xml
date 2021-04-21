@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="mock-consumer" />
+
+    <dubbo:registry address="zookeeper://localhost:2181" />
+    <!--  mock, throw 抛出异常 ; return 返回字符串表示对象, empty: 表示基本类型默认值,集合类的空值  -->
+<!--    <dubbo:reference id="demoService" interface="com.wsy.mock.api.DemoService" mock="throw java.lang.Exception"/>-->
+    <!--  force: 表示强制使用mock行为  -->
+    <dubbo:reference id="demoService" interface="com.wsy.mock.api.DemoService" >
+        <!--   方法级别配置mock     -->
+<!--        <dubbo:method name="sayHello1" mock="force:return invoker fail" />-->
+        <dubbo:parameter key="sayHello1.mock" value="force: return empty" />
+    </dubbo:reference>
+
+</beans>

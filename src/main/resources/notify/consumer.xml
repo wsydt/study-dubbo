@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="notify-consumer" />
+
+    <dubbo:registry address="zookeeper://localhost:2181" />
+
+    <!--  使用lru缓存, lru使最近最少使用原则删除多余缓存  -->
+    <dubbo:reference interface="com.wsy.notify.api.DemoService" id="demoService" >
+        <dubbo:method name="sayHello" onreturn="notify.onReturn" onthrow="notify.onThrow" />
+    </dubbo:reference>
+
+    <bean id="notify" class="com.wsy.notify.impl.NotifyImpl" />
+
+</beans>
