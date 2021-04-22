@@ -14,8 +14,8 @@ import org.apache.dubbo.rpc.service.GenericService;
 public class ApiConsumerConfiguration {
 
     public static void main(String[] args) {
-        classicReference();
-//        bootstrapReference();
+//        classicReference();
+        bootstrapReference();
     }
 
     private static void classicReference() {

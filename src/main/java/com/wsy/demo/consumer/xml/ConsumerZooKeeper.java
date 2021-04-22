@@ -19,8 +19,8 @@ public class ConsumerZooKeeper {
 //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("zookeeper/consumer-cluster.xml");
         DemoService service = (DemoService) context.getBean("demoService");
         System.out.println(service);
-        String result = service.sayHello("wsy");
-        System.out.println(result);
+//        String result = service.sayHello("wsy");
+//        System.out.println(result);
         List<String> nameList = service.getName();
         System.out.println(nameList);
         DemoService service1 = (DemoService) context.getBean("demoService1");

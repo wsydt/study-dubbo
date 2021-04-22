@@ -17,7 +17,7 @@ public class NotifyConsumer {
         DemoService demoService = context.getBean(DemoService.class);
         NotifyImpl notify = context.getBean(NotifyImpl.class);
 
-        int id = 100;
+        int id = 1;
         String result = demoService.sayHello(id);
         for (int i = 0; i < 10; i++) {
             if (!notify.ret.containsKey(id)) {

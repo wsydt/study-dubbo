@@ -4,15 +4,10 @@
        xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="notify-consumer" />
+    <dubbo:application name="generic-type-consumer" />
 
     <dubbo:registry address="zookeeper://localhost:2181" />
 
-    <dubbo:reference interface="com.wsy.notify.api.DemoService" id="demoService" >
-        <!--  onreturn 表示调用之后, onthrow 表示出现异常之后, 执行哪个类的那个方法  -->
-        <dubbo:method name="sayHello" async="true" onreturn="notify.onReturn" onthrow="notify.onThrow" />
-    </dubbo:reference>
-
-    <bean id="notify" class="com.wsy.notify.impl.NotifyImpl" />
+    <dubbo:reference interface="com.wsy.generic.impl.api.HelloService" id="helloService" />
 
 </beans>
