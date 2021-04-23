@@ -1,19 +1,19 @@
 #####provider
 spring:
   application:
-    name: dubbo-demo-provider
+    name: attachment-provider
 
 dubbo:
   application:
-    name: dubbo-demo-provider
+    name: attachment-provider
   registry:
     address: zookeeper://localhost:2181
-    group: dubbo-demo
   protocol:
     name: dubbo
     port: 30020
+    dispatcher: all
   scan:
-    base-packages: com.wsy.demo.springboot.provider
+    base-packages: com.wsy.attachment.api, com.wsy.attachment.impl
 
 server:
   port: 9000
@@ -21,17 +21,17 @@ server:
 ##### consumer
 #spring:
 #  application:
-#    name: dubbo-demo-consumer
+#    name: attachment-consumer
 #
 #server:
 #  port: 10000
 #
 #dubbo:
 #  application:
-#    name: dubbo-demo-consumer
+#    name: attachment-consumer
 #  registry:
 #    address: zookeeper://localhost:2181
 #  consumer:
-#    timeout: 3000
+#    timeout: 10000
 #  scan:
-#    base-packages: com.wsy.demo.springboot.consumer
+#    base-packages: com.wsy.attachment

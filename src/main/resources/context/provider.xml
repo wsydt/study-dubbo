@@ -14,4 +14,6 @@
 
     <bean id="contextService" class="com.wsy.context.impl.ContextServiceImpl" />
 
+    <dubbo:reference interface="com.wsy.context.api.HelloService" id="helloService" />
+
 </beans>

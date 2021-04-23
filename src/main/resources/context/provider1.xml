@@ -4,10 +4,14 @@
        xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="context-consumer1" />
+    <dubbo:application name="context-provider1" />
 
     <dubbo:registry address="zookeeper://localhost:2181" />
 
-    <dubbo:reference interface="com.wsy.context.api.ContextService" id="contextService"/>
+    <dubbo:protocol name="dubbo" port="10031" />
+
+    <dubbo:service interface="com.wsy.context.api.HelloService" ref="helloService" />
+
+    <bean id="helloService" class="com.wsy.context.impl.HelloServiceImpl" />
 
 </beans>

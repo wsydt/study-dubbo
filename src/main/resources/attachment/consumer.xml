@@ -4,10 +4,10 @@
        xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="context-consumer1" />
+    <dubbo:application name="attachment-consumer" />
 
     <dubbo:registry address="zookeeper://localhost:2181" />
 
-    <dubbo:reference interface="com.wsy.context.api.ContextService" id="contextService"/>
+    <dubbo:reference interface="com.wsy.attachment.api.AttachmentService" id="attachmentService" timeout="10000" />
 
 </beans>
