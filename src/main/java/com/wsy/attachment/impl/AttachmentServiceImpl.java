@@ -2,7 +2,9 @@ package com.wsy.attachment.impl;
 
 import com.wsy.attachment.api.AttachmentService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.apache.dubbo.rpc.RpcContext;
+import org.apache.log4j.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,13 +13,15 @@ import java.util.Date;
  * @author wangshuangyong 2021.4.23
  */
 
-@Slf4j
+@DubboService
 public class AttachmentServiceImpl implements AttachmentService {
+
+    Logger log = Logger.getLogger(AttachmentServiceImpl.class);
 
     @Override
     public String sayHello(String name) {
         try {
-            Thread.sleep(7000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

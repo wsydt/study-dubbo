@@ -4,6 +4,8 @@ import com.wsy.attachment.controller.AttachmentController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @SpringBootApplication
-@ComponentScan(excludeFilters=@ComponentScan.Filter({RestController.class}))
+@Profile("provider")
+@ComponentScan(excludeFilters={@ComponentScan.Filter({RestController.class}), @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value = SpringBootConsumer.class)})
 public class SpringBootProvider {
 
     public static void main(String[] args) {

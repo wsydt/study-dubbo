@@ -1,0 +1,11 @@
+#  generated.future
+#async-postprocess=com.wsy.async.origin.future.filter.AsyncPostprocessFilter
+#legacy-block=com.wsy.async.origin.future.filter.LegacyBlockFilter
+#legacy-listenable=com.wsy.async.origin.future.filter.LegacyListenableFilter
+#  onerror
+1=com.wsy.async.onerror.filter.NormalAsyncFilter
+2=com.wsy.async.onerror.filter.NormalSyncFilter
+3=com.wsy.async.onerror.filter.OnErrorThrowableAsyncFilter
+#4=com.wsy.async.onerror.filter.OnResponseThrowableAsyncFilter
+5=com.wsy.async.onerror.filter.ProviderErrorAsyncFilter
+#6=com.wsy.async.onerror.filter.ThrowableAsyncFilter

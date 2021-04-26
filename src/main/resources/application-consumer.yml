@@ -1,0 +1,15 @@
+##### consumer
+spring:
+  application:
+    name: attachment-consumer
+
+server:
+  port: 10000
+
+dubbo:
+  application:
+    name: attachment-consumer
+  registry:
+    address: zookeeper://localhost:2181
+  consumer:
+    timeout: 10000

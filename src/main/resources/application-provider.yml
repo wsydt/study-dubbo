@@ -1,0 +1,19 @@
+#####provider
+spring:
+  application:
+    name: attachment-provider
+
+dubbo:
+  application:
+    name: attachment-provider
+  registry:
+    address: zookeeper://localhost:2181
+  protocol:
+    name: dubbo
+    port: 30020
+    dispatcher: all
+  scan:
+    base-packages: com.wsy.attachment.impl
+
+server:
+  port: 9000
